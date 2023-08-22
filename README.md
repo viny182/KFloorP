@@ -1,6 +1,6 @@
-# KafloorP - Kindle Floorplan Panel for Home Assistant
+# KfloorP - Kindle Floorplan Panel for Home Assistant
 
-**KafloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
+**KfloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
@@ -51,7 +51,7 @@ The structure should be like this:
 
 Also add your floorplan images to the same path if you want to host all the files together.
 
-2. Go to your configuration.yaml from your Home Assistant installation add the **"cors_allowed_origins"** to the *http* node config with your webserver IP or URL. (The one you will enter on kindle to open KafloorP)
+2. Go to your configuration.yaml from your Home Assistant installation add the **"cors_allowed_origins"** to the *http* node config with your webserver IP or URL. (The one you will enter on kindle to open KfloorP)
 >http:
   cors_allowed_origins:
     - 'null'

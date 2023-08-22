@@ -58,13 +58,13 @@ Also add your floorplan images to the same path if you want to host all the file
     - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT
     - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT/
 
-3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token your floorplan images and your devices.
+3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
-4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. Eg: http://x.x.x.x:8080/kafloorp/index.html
+4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kafloorp/index.html
 
 ## Development
 
-The majority of the development is done using the ancient JavaScript ES3 standard, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks was used to make this work. I'm not a developer and the code is ugly as hell.
+The majority of the development is done using the ancient JavaScript ES3 standard, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks were used to make this work. I'm not a developer and the code is ugly as hell.
 
 Any PR Should be preferably tested on a real Kindle before submitted, but are always welcomed.
 

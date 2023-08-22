@@ -4,7 +4,9 @@
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
-<img src="./kindle.jpg" height=70%/>
+<img src="./kindle.jpg" height=50%/>
+<img src="./kindle2.jpg" height=50%/>
+<img src="./kindle3.jpg" height=50%/>
 
 
 ## Features
@@ -64,5 +66,5 @@ Also add your floorplan images to the same path if you want to host all the file
 
 The majority of the development is done using the ancient JavaScript ES3 standard, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks was used to make this work. I'm not a developer and the code is ugly as hell.
 
-Any PR Should be preferably test on a real Kindle before submitted, but are always welcomed.
+Any PR Should be preferably tested on a real Kindle before submitted, but are always welcomed.
 

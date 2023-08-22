@@ -35,6 +35,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 * Kindle Touch 2nd generation or newer.
     * Jailbroken device is preferred but not required, as you need this hack to prevent the native screensaver and to make the device go on full Kiosk Mode.
     * Kindle Jailbreak guides can be found in [here](https://www.mobileread.com/forums/showthread.php?t=346037)
+    * You might be able to disable the screensaver without jailbreak. Check it in [here](#disable-screensaver-without-jailbreak)
 * A WebServer. It runs in almost any basic webserver like httpd/Apache, etc.. Here are some options:
     * **If you do not expose your HA to the Internet:** you can use HA to host the files, by coping them to your **/config/www** folder, and them acces it trough your internal HA URL /local path. (e.g http://192.168.182.10:200/local/kafloorp/index.html). Don't do this if your instance is exposed to Internet, as everyone will have access to your dashboard, with no authentication required.
     * **If you use Home Assistant OS:** Any of the **Apache2 Addons** from the excelent repository [hassio-addons](https://github.com/FaserF/hassio-addons) maintained by [FaserF](https://github.com/FaserF).
@@ -42,21 +43,28 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 
 ## Deployment / Installation
 
-1. After you have your webhost setup, you need to copy all the *.html files, the css folder with its content and the data.js file from this repo to a folder of your preference (or in the root) of your webhost.
+1. After you have your webhost setup, you need to copy all the 3 *.html files (index.html, 2ndfloor.html and switches.html), the **css folder** with its content and the **data.js** file from this repo to a folder of your preference (or in the root) of your webhost.
 The structure should be like this:
-> ./kfloorp/css/common-style.css
-> ./kfloorp/data.js
-> ./kfloorp/2ndfloor.html
-> ./kfloorp/switches.html
+
+```
+   ./kfloorp/css/common-style.css
+   ./kfloorp/data.js
+   ./kfloorp/2ndfloor.html
+   ./kfloorp/switches.html
+```
 
 Also add your floorplan images to the same path if you want to host all the files together.
 
-2. Go to your configuration.yaml from your Home Assistant installation add the **"cors_allowed_origins"** to the *http* node config with your webserver IP or URL. (The one you will enter on kindle to open KfloorP)
->http:
-  cors_allowed_origins:
-    - 'null'
-    - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT
-    - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT/
+2. Go to your configuration.yaml from your Home Assistant installation add the **api** module (if not already present) and also add the **"cors_allowed_origins"** key to the **http** module with your webserver IP or URL. (The one you will enter on kindle to open KfloorP)
+```yaml
+      api:
+
+      http:
+        cors_allowed_origins:
+         - 'null'
+         - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT
+         - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT/
+```
 
 3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
@@ -67,4 +75,20 @@ Also add your floorplan images to the same path if you want to host all the file
 The majority of the development is done using the ancient JavaScript ES3 standard, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks were used to make this work. I'm not a developer and the code is ugly as hell.
 
 Any PR Should be preferably tested on a real Kindle before submitted, but are always welcomed.
+
+## Misc
+
+### Disable Screensaver without jailbreak
+
+Not Tested: You might be able to disable screensaver on your Kindle without having to Jailbreak it. The instructions below were taken from [Basic-Hass-Dash Repository](https://github.com/nirkons/Basic-Hass-Dash) but I have not tested it.
+
+
+You can disable the screensaver/sleep mode in your Kindle
+
+Newer kindles (2015 Paperwhite & up) type ~ds in the search bar and click search. (Don't worry, After restarting the Kindle the screensaver will return)
+
+Older Kindles: Type ~disableScreensaver in the search box (type del on the home screen) and your Kindle will not go into sleep mode. ~resumeScreensaver will revert the Kindle back to its default (screensaver enabled) state. Note that this does not increase power consumption, as the Kindle consumes no power (with wireless off) when displaying a page
+
+Or < Del > to open the search box on the home screen ;debugOn ~disableScreensaver NOTE: this also stops you from manually using the power switch to enter sleep mode. To re-enable: ~resumeScreensaver and to turn off debug mode: ;debugOff
+
 

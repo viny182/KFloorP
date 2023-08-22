@@ -1,6 +1,6 @@
 # KafloorP - Kindle Floorplan Panel for Home Assistant
 
-**KafloorP** is a panel dashboard created for [Jaiblroken*](#requirements) Kindles, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
+**KafloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 

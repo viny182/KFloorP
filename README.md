@@ -62,8 +62,8 @@ Also add your floorplan images to the same path if you want to host all the file
       http:
         cors_allowed_origins:
          - 'null'
-         - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT
-         - http://YOUR:WEBSERVER:IP:ADDRESS:YOUR_SERVERPORT/
+         - http://YOUR.WEBSERVER.IP.ADDRESS:YOUR_SERVERPORT
+         - http://YOUR.WEBSERVER.IP.ADDRESS:YOUR_SERVERPORT/
 ```
 
 3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.

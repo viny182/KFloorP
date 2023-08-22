@@ -30,6 +30,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 ## Requirements
 
 * Your Home Assistant Internal URL with no TLS(SSL) encryption (http not https).
+* Your floorplan images for background and your device names from Home Assistant entities.
 * A Home Assistant [Long Lived Access Token](https://www.home-assistant.io/docs/authentication/), created from your Account Profile directly on HA.
 * Kindle Touch 2nd generation or newer.
     * Jailbroken device is preferred but not required, as you need this hack to prevent the native screensaver and to make the device go on full Kiosk Mode.

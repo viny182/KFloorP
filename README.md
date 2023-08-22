@@ -4,9 +4,9 @@
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
-<img src="./kindle.jpg" height=30%/>
-<img src="./kindle2.jpg" height=30%/>
-<img src="./kindle3.jpg" height=30%/>
+<img src="./kindle.jpg" height="30%"/>
+<img src="./kindle2.jpg" height="30%"/>
+<img src="./kindle3.jpg" height="30%"/>
 
 
 ## Features

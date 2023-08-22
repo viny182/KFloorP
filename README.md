@@ -72,7 +72,7 @@ Also add your floorplan images to the same path if you want to host all the file
 
 ## Development
 
-The majority of the development is done using the ancient JavaScript ES3 standard, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks were used to make this work. I'm not a developer and the code is ugly as hell.
+The majority of the development is done using the ancient JavaScript ES3 standard for the sake of older Kindles compatibility, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks were used to make this work. I'm not a developer and the code is ugly as hell.
 
 Any PR Should be preferably tested on a real Kindle before submitted, but are always welcomed.
 

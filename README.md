@@ -42,7 +42,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 
 ## Deployment / Installation
 
-1. After you have web host setup, you need to copy the all the *.html files, the css folder and the data.js from this repo to a folder of your preference or in the root of your webhost.
+1. After you have your web host setup, you need to copy all the *.html files, the css folder and the data.js from this repo to a folder of your preference or in the root of your webhost.
 The structure should be like this:
 > ./kfloorp/css/common-style.css
 > ./kfloorp/data.js

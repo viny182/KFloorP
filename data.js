@@ -1,12 +1,12 @@
 // CHANGE the Variables below according to your needs:
 
-//Your homeassistant address. Ex: "http://192.168.1.10:8123"
+//Your homeassistant address. Ex: var hassaddress = "http://192.168.1.10:8123"
 var hassaddress = ""; 
 
 //Your homeassistant long lived token
 var hasspass = ""; 
 
-// your home floorplan file path. Ex: ""./images/floorplan.png"
+// your home floorplan file path. Ex: var floorplan1stFloor = "./images/floorplan.png"
 var floorplan1stFloor = "./images/floorplan.png"; // your floorplan image path for 1st floor
 var floorplan2ndFloor = "./images/floorplan.png"; // your floorplan image path for 2nd floor
 
@@ -67,8 +67,7 @@ var devices1stFloor = [
 
 // devices for the second floor
 // leave empty if you only have 1 floor
-// empty example:
-// var devices2ndFloor = [];
+// empty example: var devices2ndFloor = [];
 var devices2ndFloor = [
   ["binary_sensor.janela_escritorio", 640, 30, "window"],
   ["binary_sensor.janela_suite", 194, 20, "window"],

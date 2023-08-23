@@ -43,12 +43,14 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 
 ## Deployment / Installation
 
-1. After you have your webhost setup, you need to copy all the 3 *.html files (index.html, 2ndfloor.html and switches.html), the **css folder** with its content and the **data.js** file from this repo to a folder of your preference (or in the root) of your webhost.
+1. After you have your webhost setup, you need to copy all the 3 *.html files (index.html, 2ndfloor.html and switches.html), the folders **css** and **scripts** with their contents, and the **data.js** file from this repo to a folder of your preference (or in the root) of your webhost.
 The structure should be like this:
 
 ```
+   ./floorp/scripts/main.js
    ./kfloorp/css/common-style.css
    ./kfloorp/data.js
+   ./kfloorp/index.html
    ./kfloorp/2ndfloor.html
    ./kfloorp/switches.html
 ```

@@ -12,200 +12,17 @@
   <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
   <meta http-equiv="pragma" content="no-cache" />
   <script src="./data.js"></script>
+  <script src="./scripts/main.js"></script>
   <link rel="stylesheet" href="./css/common-style.css" />
 </head>
 
-<body onload="startup()">
-  <script>
-    var binarySensorDefaultOn = "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='1.5'><path d='M1 15V9a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v6a6 6 0 0 1-6 6H7a6 6 0 0 1-6-6Z'/><path d='M9 9a3 3 0 1 1 0 6a3 3 0 0 1 0-6Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M14 15V9l4 6V9'/></g></svg>";
-    var binarySensorDefaultOff = "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><g fill='none' stroke='currentColor' stroke-width='1.5'><path d='M1 15V9a6 6 0 0 1 6-6h10a6 6 0 0 1 6 6v6a6 6 0 0 1-6 6H7a6 6 0 0 1-6-6Z'/><path d='M7 9a3 3 0 1 1 0 6a3 3 0 0 1 0-6Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 15V9h3m2 6V9h3m-8 3h2.572M17 12h2.572'/></g></svg>";
-    var alertEntity = "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='black' d='M12 2L1 21h22M12 6l7.53 13H4.47M11 10v4h2v-4m-2 6v2h2v-2'/></svg>";
-    var stdOnSwitchIcon = "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='black' d='M17 7H7a5 5 0 0 0-5 5a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5a5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3a3 3 0 0 1-3 3Z'/></svg>";
-    var stdOffSwitchIcon = "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='black' d='M17 7H7a5 5 0 0 0-5 5a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5a5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3a3 3 0 0 1-3 3Z'/></svg>";
-    var floorplan1 = "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 32 32'><path fill='currentColor' d='M28 2H4c-1.1 0-2 .9-2 2v24c0 1.1.9 2 2 2h15v-2c0-2.8 2.2-5 5-5v-2c-3.9 0-7 3.1-7 7h-3v-4h-2v4H4V4h8v14h2v-5h4v-2h-4V4h14v7h-4v2h4v15h-4v2h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'/></svg>";
-    var floorplan2 = "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 15 15'><path fill='currentColor' fill-rule='evenodd' d='M0 0h4.651l3.126 2.084l-.554.832L4.349 1H1v13h5V8H4V7h5v1H7v6h7V8h-2V7h2V1h-4V0h5v15H0V0Z' clip-rule='evenodd'/></svg>";
-    var switchesIcon = "<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'><path fill='black' d='M3 4h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1m7 0h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1m7 0h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1M4 18h2v-5H4v5m7-7h2V6h-2v5m7 7h2v-5h-2v5Z'/></svg>";
-
-
-    function fetchAPIAndPopulateVariable(entity_id) {
-
-      var apiRequest = new XMLHttpRequest();
-
-      if (arguments.length == 1) {
-        apiRequest.open("GET", hassaddress + "/api/states/" + entity_id, false);
-      } else {
-        apiRequest.open("GET", hassaddress + "/api/states", false);
-      }
-
-      apiRequest.setRequestHeader("Authorization", "Bearer " + hasspass);
-      apiRequest.send(null);
-
-      if (apiRequest.status === 200 && apiRequest.readyState == 4) {
-        var jsonResponse = JSON.parse(apiRequest.responseText);
-        return jsonResponse;
-      } else {
-        return null;
-      }
-    }
-
-    function homefunc(id, state) {
-      //Should work on all e-ink devices with a browser that supports Javascript (Kindle 2 (2009) in advanced mode and above)
-      //LOCAL SETUP
-      var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
-      xmlhttp.open("POST", hassaddress + "/api/services/" + id.substring(0, id.indexOf(".")) + "/" + state);
-      xmlhttp.setRequestHeader("Authorization", "Bearer " + hasspass);
-      xmlhttp.setRequestHeader("Content-Type", "application/json");
-
-      xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState === 4) {
-          if (xmlhttp.status === 200) {
-
-            if (id.substring(0, id.indexOf(".")) != "light") {
-              sleepFor(1000);
-            }
-
-            loadContent(id);
-            //window.location.reload();
-          } else {
-            console.error("Submit fail");
-          }
-        }
-      };
-
-      xmlhttp.send(JSON.stringify({ entity_id: id }));
-    }
-
-    function sleepFor(sleepDuration) {
-      var now = new Date().getTime();
-      while (new Date().getTime() < now + sleepDuration) {
-        /* Do nothing */
-      }
-    }
-
-    function loadContent(entity_id) {
-      var apiData;
-      var table = document.createElement('table');
-      table.className = "table-switches";
-
-      if (arguments.length == 1) {
-        apiData = fetchAPIAndPopulateVariable(entity_id);
-      } else {
-        apiData = fetchAPIAndPopulateVariable();
-      }
-
-      if (Object.prototype.toString.call(apiData) === "[object Array]") {
-
-        var switches = [];
-
-        for (var i = 0; i < apiData.length; i++) {
-          if (apiData[i]['entity_id'].substring(0, apiData[i]['entity_id'].indexOf(".")) == "switch") {
-            switches.push(apiData[i]);
-          }
-        }
-
-        switches.sort(function (a, b) {
-          var keyA = a.attributes['friendly_name'].toLowerCase();
-          var keyB = b.attributes['friendly_name'].toLowerCase();
-
-          if (keyA < keyB) return -1;
-          if (keyA > keyB) return 1;
-          return 0;
-        });
-
-        console.log(switches);
-
-        var numRows = Math.ceil(switches.length / 5);
-
-        for (var i = 0; i < numRows; i++) {
-          var row = document.createElement('tr');
-
-          for (var j = 0; j < 5; j++) {
-            var index = i * 5 + j;
-            if (index < switches.length) {
-              var cell = document.createElement('td');
-              cell.id = switches[index]['entity_id'];
-              //console.log(switches[index]['attributes']['friendly_name']);
-              var cellContent = switches[index]['attributes']['friendly_name'] + "<br/>";
-
-              switch (switches[index]['state']) {
-                case "on":
-                  cellContent += "<a href=\"javascript:homefunc('" + switches[index]["entity_id"] + "', 'turn_off')\" >";
-                  cellContent += stdOnSwitchIcon;
-                  cellContent += "</a>"
-                  break;
-                case "off":
-                  cellContent += "<a href=\"javascript:homefunc('" + switches[index]["entity_id"] + "', 'turn_on')\" >";
-                  cellContent += stdOffSwitchIcon;
-                  cellContent += "</a>"
-                  break;
-                default:
-                  cellContent += "<a href=\"javascript:homefunc('" + switches[index]["entity_id"] + "', 'toggle')\" >";
-                  cellContent += alertEntity;
-                  cellContent += "</a>"
-
-
-              }
-              cell.innerHTML = cellContent;
-              row.appendChild(cell);
-            }
-          }
-
-          table.appendChild(row);
-        }
-      }
-      else {
-        // TODO only 1 item
-        var cell = document.getElementById(apiData['entity_id']);
-        var cellContent = apiData['attributes']['friendly_name'] + "<br/>";
-        
-        switch (apiData['state']) {
-          case "on":
-            cellContent += "<a href=\"javascript:homefunc('" + apiData['entity_id'] + "', 'turn_off')\" >";
-            cellContent += stdOnSwitchIcon;
-            cellContent += "</a>"
-            break;
-          case "off":
-            cellContent += "<a href=\"javascript:homefunc('" + apiData['entity_id'] + "', 'turn_on')\" >";
-            cellContent += stdOffSwitchIcon;
-            cellContent += "</a>"
-            break;
-          default:
-            cellContent += "<a href=\"javascript:homefunc('" + apiData['entity_id'] + "', 'toggle')\" >";
-            cellContent += alertEntity;
-            cellContent += "</a>"
-        }
-        cell.innerHTML = cellContent;
-
-      }
-
-      var content = document.getElementById('content');
-      content.appendChild(table);
-
-
-    }
-
-    function setMenu() {
-      if (devices2ndFloor.length == 0) {
-        var divMenu2ndFloor = document.getElementById('menu2');
-        divMenu2ndFloor.style = "visibility: hidden; display: none;";
-      }
-
-    }
-
-    function startup() {
-      setMenu();
-      loadContent();
-      //setInterval(loadContent, 500000); // 15 seg
-      //setInterval(location.reload(), 2000);
-    }
-  </script>
-
+<body onload="startupSwitches()">
   <div id="wrapper">
     <!-- HEADER START -->
     <div id="header">
       <div id="logo">
-        <span style="font-size: 30px">Fkloorp</span><br />
-        <span style="font-size: 23px">Home</span><br />
+        <span style="font-size: 30px">FkloorP</span><br />
+        <span style="font-size: 23px">HASS</span><br />
         <span style="font-size: 30px">Kindle</span><br />
       </div>
 
@@ -232,10 +49,6 @@
       </div>
     </div>
     <!-- HEADER END -->
-
-    <!-- FLOORPLAN START -->
-
-    <!-- FLOORPLAN END -->
 
     <!-- CONTENT START -->
     <div id="content">

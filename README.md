@@ -47,7 +47,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 The structure should be like this:
 
 ```
-   ./floorp/scripts/main.js
+   ./kfloorp/scripts/main.js
    ./kfloorp/css/common-style.css
    ./kfloorp/data.js
    ./kfloorp/index.html

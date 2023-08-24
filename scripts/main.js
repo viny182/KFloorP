@@ -137,6 +137,8 @@ function populateForecast(data, entity_id) {
 
 
 function loadContent(floor, entity_id) {
+    updateClock();
+
     setFloorPlanImg(floor);
 
     var apiData;
@@ -501,7 +503,6 @@ function setMenu() {
 
 function startup(floor) {
     setMenu();
-    updateClock();
     //loadContent(floor);
     if (floor == 1 || floor == 2) {
         loadContent(floor);
@@ -528,6 +529,8 @@ function updateClock() {
 }
 
 function loadContentSwitches(entity_id) {
+    updateClock();
+    
     var apiData;
     var table = document.createElement('table');
     table.className = "table-switches";

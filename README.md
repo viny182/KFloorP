@@ -68,7 +68,7 @@ http:
     - http://YOUR.WEBSERVER.IP.ADDRESS:YOUR_SERVERPORT/
 ```
 
-After adding the lines above to your confituration, remembert to **restart your Home Assistant Core**.
+After adding the lines above to your confituration, remember to **restart your Home Assistant Core**.
 
 3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
@@ -76,7 +76,7 @@ After adding the lines above to your confituration, remembert to **restart your 
 
 ## Development
 
-The majority of the development is done using the ancient JavaScript ES3 standard for the sake of older Kindles compatibility, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks were used to make this work. I'm not a developer and the code is ugly as hell.
+The majority of the development is done using the ancient JavaScript ES3 standard for the sake of older Kindles compatibility, with a few CSS stylization and pure HTML. As Kindle Web Support is not well documented and it does not necessarily behaves like a PC Browser, a lot of hacks were used to make this work. I'm not a real developer and the code is ugly as hell.
 
 Any PR Should be preferably tested on a real Kindle before submitted, but are always welcomed.
 

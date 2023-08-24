@@ -32,7 +32,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 * Your Home Assistant Internal URL with no TLS(SSL) encryption (http not https).
 * Your floorplan images for background and your device names from Home Assistant entities.
 * A Home Assistant [Long Lived Access Token](https://www.home-assistant.io/docs/authentication/), created from your Account Profile directly on HA.
-* Kindle Touch 2nd generation or newer.
+* Kindle Touch 2nd generation or newer (or any other tablet-like old device).
     * Jailbroken device is preferred but not required, as you need this hack to prevent the native screensaver and to make the device go on full Kiosk Mode.
     * Kindle Jailbreak guides can be found in [here](https://www.mobileread.com/forums/showthread.php?t=346037)
     * You might be able to disable the screensaver without jailbreak. Check it in [here](#disable-screensaver-without-jailbreak)
@@ -67,6 +67,8 @@ http:
     - http://YOUR.WEBSERVER.IP.ADDRESS:YOUR_SERVERPORT
     - http://YOUR.WEBSERVER.IP.ADDRESS:YOUR_SERVERPORT/
 ```
+
+After adding the lines above to your confituration, remembert to **restart your Home Assistant Core**.
 
 3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 

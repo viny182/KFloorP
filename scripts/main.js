@@ -96,10 +96,7 @@ function homefunc(id, state, floor) {
 
                 } else {
                     loadContent(floor, id);
-
                 }
-
-
                 //window.location.reload();
             } else {
                 console.error("Submit fail");
@@ -504,10 +501,16 @@ function setMenu() {
 
 function startup(floor) {
     setMenu();
-    loadContent(floor);
-    setInterval(loadContent(floor), 15000); // 15 seg
+    //loadContent(floor);
+    if (floor == 1 || floor == 2) {
+        loadContent(floor);
+        setInterval(loadContent, 10000, floor); // 10 seg
+    }
+    else if (floor == 3) {
+        loadContentSwitches();
+        setInterval(loadContentSwitches, 10000); // 10 seg
+    }
 
-    //setInterval(location.reload(), 2000);
 }
 
 function loadContentSwitches(entity_id) {
@@ -608,11 +611,4 @@ function loadContentSwitches(entity_id) {
     content.appendChild(table);
 
 
-}
-
-function startupSwitches() {
-    setMenu();
-    loadContentSwitches();
-    //setInterval(loadContentSwitches, 500000); // 15 seg
-    //setInterval(location.reload(), 2000);
 }

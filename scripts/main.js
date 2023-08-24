@@ -501,6 +501,7 @@ function setMenu() {
 
 function startup(floor) {
     setMenu();
+    updateClock();
     //loadContent(floor);
     if (floor == 1 || floor == 2) {
         loadContent(floor);
@@ -511,6 +512,19 @@ function startup(floor) {
         setInterval(loadContentSwitches, 10000); // 10 seg
     }
 
+}
+
+function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+
+    // Add leading zeros if needed
+    hours = (hours < 10 ? "0" : "") + hours;
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+
+    var timeString = hours + ":" + minutes;
+    document.getElementById("clock").innerHTML = timeString;
 }
 
 function loadContentSwitches(entity_id) {

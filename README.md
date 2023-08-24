@@ -72,7 +72,7 @@ After adding the lines above to your confituration, remember to **restart your H
 
 3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
-4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kafloorp/index.html
+4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kfloorp/index.html
 
 ## Development
 

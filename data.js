@@ -6,7 +6,7 @@ var hassaddress = "";
 //Your homeassistant long lived token
 var hasspass = ""; 
 
-//if your kindle does not display your correct time, enter change the timeoffset to the difference between your needs (either negatives or positives values are accepted)
+//if your kindle does not display your correct time, change the timeoffset from 0 to the difference between your needs (either negatives or positives values are accepted)
 var timeoffset = 0;
 
 // your home floorplan file path. Ex: var floorplan1stFloor = "./images/floorplan.png"

@@ -518,6 +518,9 @@ function startup(floor) {
 
 function updateClock() {
     var now = new Date();
+    
+    now.setHours(now.getHours() + (timeoffset));
+
     var hours = now.getHours();
     var minutes = now.getMinutes();
 

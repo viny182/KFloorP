@@ -496,7 +496,8 @@ function loadContent(floor, entity_id) {
 function setMenu() {
     if (devices2ndFloor.length == 0) {
         var divMenu2ndFloor = document.getElementById('menu2');
-        divMenu2ndFloor.style = "visibility: hidden; display: none;";
+        divMenu2ndFloor.parentElement.removeChild(divMenu2ndFloor);
+        //divMenu2ndFloor.style = "visibility: hidden !important; display: none !important;";
     }
 
 }

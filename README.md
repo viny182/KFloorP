@@ -1,6 +1,6 @@
-# KfloorP - Kindle Floorplan Panel for Home Assistant
+# KFloorP - Kindle Floorplan Panel for Home Assistant
 
-**KfloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles and other low specs/older browsers devices, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
+**KFloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles and other low specs/older browsers devices, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
@@ -72,7 +72,7 @@ After adding the lines above to your confituration, remember to **restart your H
 
 3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
-4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kafloorp/index.html
+4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kfloorp/index.html
 
 ## Development
 
@@ -94,5 +94,4 @@ Newer kindles (2015 Paperwhite & up) type ~ds in the search bar and click search
 Older Kindles: Type ~disableScreensaver in the search box (type del on the home screen) and your Kindle will not go into sleep mode. ~resumeScreensaver will revert the Kindle back to its default (screensaver enabled) state. Note that this does not increase power consumption, as the Kindle consumes no power (with wireless off) when displaying a page
 
 Or < Del > to open the search box on the home screen ;debugOn ~disableScreensaver NOTE: this also stops you from manually using the power switch to enter sleep mode. To re-enable: ~resumeScreensaver and to turn off debug mode: ;debugOff
-
 

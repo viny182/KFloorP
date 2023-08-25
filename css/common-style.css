@@ -7,7 +7,7 @@ body {
 
 a {
     color: white;
-    text-decoration: none;
+    text-decoration: none !important;
     border: 0;
 
 }
@@ -79,12 +79,25 @@ h2 {
     border: 3px solid #ccc;
     margin: 11px 5px;
     padding: 10px 0 8px 0;
+    text-decoration: none;
 }
 
 .main-menu-active {
     background-color: #ccc;
     color: black;
     text-decoration: none;
+}
+
+.main-menu-active a {
+    color: black;
+    text-decoration: none !important;
+	border-bottom-style: none;
+}
+
+.main-menu-active a, a:hover, a:link, a:active, a:visited {
+    text-decoration: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 /******************** Weather ********************/

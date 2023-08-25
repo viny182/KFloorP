@@ -1,4 +1,4 @@
-# KfloorP - Kindle Floorplan Panel for Home Assistant
+# KFloorP - Kindle Floorplan Panel for Home Assistant
 
 **KFloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles and other low specs/older browsers devices, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 

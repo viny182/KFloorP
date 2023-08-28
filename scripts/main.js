@@ -304,7 +304,7 @@ function loadContent(floor, entity_id) {
                         }
                         break;
                     default:
-                        newIcon = alertEntity;
+                        newIcon.innerHTML = alertEntity;
                 }
                 break;
             case "sensor":

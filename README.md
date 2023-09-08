@@ -10,7 +10,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 
 ## Features
 
-* It mimics the basic functionalities from the HomeAssistant LoveLace piture-elements card
+* It mimics the basic functionalities from the HomeAssistant LoveLace picture-elements card
 * Easy to add/change/remove devices
 * (Almost) Online Device State Tracking Changes
 * No HTML/CSS editing required

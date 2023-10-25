@@ -1,10 +1,11 @@
-# KFloorP - Kindle Floorplan Panel for Home Assistant
+# This is my version of the project KFloorP. New features and some improvements have been added.
 
 **KFloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles and other low specs/older browsers devices, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
-<img src="./kindle.jpg" width= "30%" height="30%"/><img src="./kindle2.jpg" width= "30%" height="30%"/>
+<img src="./kindle.jpg" width= "30%" height="30%"/>
+<img src="./kindle2.jpg" width= "30%" height="30%"/>
 <img src="./kindle3.jpg" width= "30%" height="30%"/>
 
 
@@ -16,16 +17,16 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 * No HTML/CSS editing required
 * Supports all the following Home Assistant Domains Entities and basic features:
     * **SWITCH** - with the possibility to customize with the following Icons:
-        * **washingmachine, microwave, smartplug, dishwasher, heater, fridge, waterfountain**
+        * **washingmachine, microwave, smartplug, dishwasher, heater, fridge, waterfountain, fan**
     * **BINARY_SENSOR** - with the possibility to customize with the following Icons:
         * **window, door**
     * **SENSOR** - with the possibility to customize with the following Icons:
-        * **battery, temperature, humidity**
+        * **battery, temperature, humidity, friendly (show attr friendly_name above sensor state), blank (only show the sensor state)**
     * **MEDIA_PLAYER** - with **Current Media Display**, **Play/Pause Control** and with the possibility to customize with the following Icons:
         * **tv, alexa, googleassistant**
-    * **WEATHER** - with **5 day Forecast function** or **Single Temperature**   
+    * **WEATHER** - with **Extended forecast function** or **Today Temperature**
 * 2nd Floor Support, automatically hidden if no devices informed
-* Dedicated Pages with all HA Switches, showing up to 50 devices
+* Dedicated Pages with all HA Switches, Lights, Automations or Players, showing up to 50 devices
 
 ## Requirements
 
@@ -47,12 +48,15 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 The structure should be like this:
 
 ```
-   ./kfloorp/scripts/main.js
    ./kfloorp/css/common-style.css
-   ./kfloorp/data.js
+   ./kfloorp/js/main.js
+   ./kfloorp/js/setup.js
    ./kfloorp/index.html
    ./kfloorp/2ndfloor.html
    ./kfloorp/switches.html
+   ./kfloorp/lights.html
+   ./kfloorp/automations.html
+   ./kfloorp/players.html
 ```
 
 Also add your floorplan images to the same path if you want to host all the files together.
@@ -70,7 +74,7 @@ http:
 
 After adding the lines above to your confituration, remember to **restart your Home Assistant Core**.
 
-3. Open the **data.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
+3. Open the **setup.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
 4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kfloorp/index.html
 

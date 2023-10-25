@@ -1,15 +1,17 @@
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
-    font-size: 20px;
+    background-color: white;
+    /*font-size: 18px;*/
+    font-family: 'Amazon Ember', Arial, sans-serif;
 }
 
 a {
     color: white;
     text-decoration: none !important;
     border: 0;
-
 }
 
 h1 {
@@ -23,10 +25,10 @@ h2 {
 #wrapper {
     /* The kindle removes the scroll bars if the width of the page is 607 px or more... */
     width: 607px;
-    height: 705px;
-    background-color: white;
+    min-height: 675px;
+    /*background-color: white;*/
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat;
     overflow: hidden;
-    /* TODO: needed? */
     text-align: left;
 }
 
@@ -46,104 +48,114 @@ h2 {
     font-size: 150%;
 }
 
-/******************** Header ********************/
+/******************** HEADER ********************/
 #header {
     overflow: hidden;
-    /* TODO needed? */
-    /*background-color: red;*/
 }
 
-/******************** Main Menu ********************/
-
+/******************** MAIN MENU ********************/
 #main-menu {
     float: left;
     margin: 15px 0 0 15px;
     width: 445px;
     height: 86px;
     overflow: hidden;
-    /* TODO: needed? */
     text-align: center;
     line-height: 1;
     background-color: black;
     color: white;
-
-}
-
-#main-menu img {
-    height: 20px;
 }
 
 .main-menu-item {
-    width: 120px;
+    width: 90px;
     display: inline-block;
     border: 3px solid #ccc;
-    margin: 11px 5px;
-    padding: 10px 0 8px 0;
+    margin: 10px 5px;
+    padding: 10px 0 5px 0;
     text-decoration: none;
+    overflow: hidden;
+    font-size: 18px;
 }
+
+    .main-menu-item svg {
+        height: 24px;
+        width: 24px;
+    }
+
+        .main-menu-item svg > path {
+            fill: white;
+        }
 
 .main-menu-active {
-    background-color: #ccc;
+    background-color: lightgray;
     color: black;
     text-decoration: none;
 }
 
-.main-menu-active a {
-    color: black;
-    text-decoration: none !important;
-	border-bottom-style: none;
-}
+    .main-menu-active a {
+        color: black;
+        text-decoration: none !important;
+        border-bottom-style: none;
+    }
 
-.main-menu-active a, a:hover, a:link, a:active, a:visited {
-    text-decoration: none !important;
-	-webkit-box-shadow: none !important;
-	box-shadow: none !important;
-}
+    .main-menu-active a, a:hover, a:link, a:active, a:visited {
+        text-decoration: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
 
-/******************** Weather ********************/
+/******************** WEATHER ********************/
 .forecast-container {
     position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
     margin: 0px;
 }
 
 .forecast-item {
     text-align: center;
-    font-size: 8;
+    font-size: 8px;
     margin-right: 1px;
     border: 1px solid #000000;
     float: left;
+    min-width: 80px;
 }
 
-.forecast-item h2 {
-    font-size: 12px;
-    border: 1px solid #ccc;
-}
+    .forecast-item h2 {
+        font-size: 12px;
+        border: 1px solid #ccc;
+    }
 
-.forecast-item p {
-    margin: 0;
-    font-size: 13px;
-}
+    .forecast-item p {
+        margin: 0;
+        font-size: 13px;
+    }
 
 .min-max {
     margin: 0;
     font-size: 12px;
 }
 
-/******************** Main Content ********************/
+/******************** MAIN CONTENT ********************/
 #content {
-    /*background-color: blue;*/
-
+    background-color: white;
 }
 
-/******************** Content ********************/
+#content-player {
+    background-color: white;
+    text-align: center;
+}
 
+    #content-player .sensor_value {
+        font-size: 22px;
+    }
+
+/******************** CONTENT ********************/
 #floorplan {
-    width: 574px;
+    width: 570px;
     /*border: 2px solid black;*/
     display: inline-block;
     position: relative;
@@ -169,18 +181,46 @@ h2 {
 .icon-div {
     text-align: center;
     position: absolute;
-    width: 48px;
+    /*width: 48px;*/
     height: 48px;
     line-height: 1;
-    padding: none;
-    border: none;
-    margin: none;
+    padding: 0;
+    border: 0;
+    margin: 0;
 }
 
-.table-switches {
+/******************** TABLE DEVICES ********************/
+.table-devices {
     text-align: center;
     font-size: 12px;
-    width: 574px;
+    width: 570px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    padding-left: 13px;
+}
+
+    .table-devices td {
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid #000000;
+        padding: 0;
+        margin: 0;
+        min-width: 110px;
+    }
+
+    .table-devices a {
+        border: 0;
+        padding: 0;
+        margin: -5px;
+        display: block;
+    }
+
+/******************** TABLE PLAYERS ********************/
+.table-players {
+    text-align: center;
+    width: 570px;
     /*border: 2px solid black;*/
     /*display: inline-block;*/
     position: relative;
@@ -190,26 +230,19 @@ h2 {
     padding-left: 13px;
 }
 
-.table-switches td{
-    text-align: center;
-    font-size: 12px;
-    border: 1px solid #000000;
-    padding: 0;
-    margin: 0;
-    
-}
+    .table-players td {
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid #000000;
+        padding: 12px;
+        margin: 0;
+        min-width: 258px;
+        overflow: hidden;
+    }
 
-.table-switches a{
-    border: 0;
-    padding: 0;
-    margin: -10px;
-    display: block;
-    
-}
-
-.table-switches sgv{
-    padding: 0;
-    margin: 0;
-    display: block;
-    
-}
+    .table-players a {
+        border: 0;
+        padding: 0;
+        margin: -5px;
+        display: block;
+    }

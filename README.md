@@ -1,12 +1,25 @@
-# This is my version of the project KFloorP. New features and some improvements have been added.
+# This is my version of the project KFloorP. New features and some improvements have been added:
+
+* CSS adjustment;
+* Code optimization and cleaning.
+* Improved metadata search;
+* Addition of several icons, including for the weather forecast;
+* Addition of more device types;
+* Added friendly name / blank display option for sensors;
+* Exclusive page for viewing all lights;
+* Exclusive page for viewing all automations;
+* Exclusive page for viewing all media players;
+* Full page for viewing a player (changed in main.js file)
+
+And more...
+
+
 
 **KFloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles and other low specs/older browsers devices, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
-<img src="./kindle.jpg" width= "30%" height="30%"/>
-<img src="./kindle2.jpg" width= "30%" height="30%"/>
-<img src="./kindle3.jpg" width= "30%" height="30%"/>
+<img src="./kindle.jpg" width= "30%" height="30%"/><img src="./kindle2.jpg" width= "30%" height="30%"/><img src="./kindle3.jpg" width= "30%" height="30%"/>
 
 
 ## Features

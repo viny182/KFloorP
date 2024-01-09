@@ -1,26 +1,9 @@
-# This is my version of the project KFloorP. New features and some improvements have been added:
-
-* CSS adjustment;
-* Code optimization and cleaning.
-* Improved metadata search;
-* Addition of several icons, including for the weather forecast;
-* Addition of more device types;
-* Added friendly name / blank display option for sensors;
-* Exclusive page for viewing all lights;
-* Exclusive page for viewing all automations;
-* Exclusive page for viewing all media players;
-* Full page for viewing a player (changed in main.js file)
-
-And more...
-
-
 
 **KFloorP** is a floorplan panel dashboard created for [Jaiblroken*](#requirements) Kindles and other low specs/older browsers devices, heavily based/inspired on the awesome projects [Hatki](https://github.com/tombo1337/hatki) and [Basic-Hass-Dash](https://github.com/nirkons/Basic-Hass-Dash).
 
 It focus on depending on anything else besides Home Assistant to fetch the data, and to be easy to deploy and maintain.
 
 <img src="./kindle.jpg" width= "30%" height="30%"/><img src="./kindle2.jpg" width= "30%" height="30%"/><img src="./kindle3.jpg" width= "30%" height="30%"/>
-
 
 ## Features
 
@@ -57,7 +40,7 @@ It focus on depending on anything else besides Home Assistant to fetch the data,
 
 ## Deployment / Installation
 
-1. After you have your webhost setup, you need to copy all the 3 *.html files (index.html, 2ndfloor.html and switches.html), the folders **css** and **scripts** with their contents, and the **data.js** file from this repo to a folder of your preference (or in the root) of your webhost.
+1. After you have your webhost setup, you need to copy all the *.html files, the folders **css** and **js** with their contents from this repo to a folder of your preference (or in the root) of your webhost.
 The structure should be like this:
 
 ```
@@ -87,7 +70,7 @@ http:
 
 After adding the lines above to your confituration, remember to **restart your Home Assistant Core**.
 
-3. Open the **setup.js** file on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
+3. Open the **setup.js** file that is inside the folder **js** on your webserver using any text editor and follow the instructions inside to add your Home Assistant IP/URL, your LongLived Token, your floorplan images and your devices.
 
 4. Go to the Experimental Web Browser on your Kindle or any PC Browser and open your webserver URL to check it out. E.g.: http://x.x.x.x:8080/kfloorp/index.html
 
@@ -112,3 +95,6 @@ Older Kindles: Type ~disableScreensaver in the search box (type del on the home 
 
 Or < Del > to open the search box on the home screen ;debugOn ~disableScreensaver NOTE: this also stops you from manually using the power switch to enter sleep mode. To re-enable: ~resumeScreensaver and to turn off debug mode: ;debugOff
 
+### Contributors
+
+Special thanks to [@p1lh4](https://github.com/p1lh4) for many improvements and new features [over the first version](https://github.com/viny182/KFloorP/pull/2).

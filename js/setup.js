@@ -48,7 +48,7 @@ var showWeatherIcon = true;
 // 
 // CURRENTLY SUPPORTED ICONS/FUNCTION PER DOMAIN:
 //
-// SWITCH: washingmachine, microwave, smartplug, dishwasher, heater, fridge, waterfountain, fan
+// SWITCH: washingmachine, microwave, smartplug, dishwasher, heater, fridge, waterfountain, fan, plug
 // BINARY_SENSOR: window, door
 // SENSOR: battery, temperature, humidity, friendly (show attr friendly_name above sensor state), blank (only show the sensor state)
 // MEDIA_PLAYER: tv, alexa, googleassistant
